@@ -5,12 +5,12 @@
         "icon": "bx bx-category-alt"
     },
     {
-        "display_name": "Customers",
-        "route": "/customers",
+        "display_name": "Crop Density",
+        "route": "/cropdensity",
         "icon": "bx bx-user-pin"
     },
     {
-        "display_name": "Products",
+        "display_name": "Crop NDVI",
         "route": "/products",
         "icon": "bx bx-package"
     },
