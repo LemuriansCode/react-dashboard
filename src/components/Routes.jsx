@@ -2,12 +2,12 @@ import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 
 import Dashboard from '../pages/Dashboard';
-import Customers from '../pages/Customers';
+import Crop_Density from '../pages/Crop_Density';
 const Routes = () => {
   return (
     <Switch>
         <Route path='/' exact component={Dashboard}/>
-        <Route path='/customers'  component={Customers}/>
+        <Route path='/cropdensity'  component={Crop_Density}/>
     </Switch>
   )
 }
