@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 import Chart from 'react-apexcharts'
 import statusCards from '../assets/JsonData/status-card-data.json'
 import StatusCard from '../components/status-card/StatusCard'
+import   { Tables2 } from '../components/tables2/Tables2';
 import  Table  from '../components/table/Table';
+
+
 const chartOptions = {
   series: [{
     name: 'Corn',
@@ -142,17 +145,8 @@ const Crop_Density = () => {
        <div className="row">
          <div className="col-6">
            <div className="row">
-             {
-               statusCards.map((item,index) =>(
-                 <div className="col-6"> 
-                   <StatusCard
-                     
-                     count={item.count}
-                     title={item.title}
-                 />
-                 </div>
-               ))
-             }
+             <Tables2/>
+             
            </div>
          </div>
             <div className="col-6">
@@ -166,47 +160,108 @@ const Crop_Density = () => {
                 />
               </div>
             </div>
-            <div className="col-4">
-              <div className="card">
-                <div className="card__header">
-                   <h3>Last one year counts</h3>
-                </div>
-                <div className="card__body">
-                   <Table
-                     
-                   headData = {topCustomers.head}
-                   renderHead = {(item,index) => renderCustomerHead(item, index)}               
-                   bodyData = {topCustomers.body}
-                   renderBody = {(item,index) => renderCustomerBody(item, index)}  
+            <div className="col-6">
+            <div className="card">
+              <div className="card__header">
+              Weekly Analysis
+                  </div>
+             <Tables2/>
+             
+           </div>
+         </div>
+            <div className="col-6">
+              <div className="card full-height">
 
-                      />
-                </div>
-                <div className="card__footer">
-                  <Link to='/' >View All</Link>
-                </div>
+                <Chart
+                 options={chartOptions.options}
+                 series={chartOptions.series}
+                 type='line'
+                 height='100%'
+                />
               </div>
             </div>
-             <div className="col-8">
-               <div className="card">
-                 <div className="card__header">
-                   <h3>Last week counts</h3>
-                 </div>
-                 <div className="card__body">
-                   <Table
-                     
+            <div className="col-6">
+            <div className="card">
+              <div className="card__header">
+              Monthly Analysis
+                  </div>
+             <Tables2/>
+             
+           </div>
+         </div>
+            <div className="col-6">
+              <div className="card full-height">
 
-                   headData = {lastWeekCrops.head}
-                   renderHead = {(item,index) => renderWeekCropsHead(item, index)}               
-                   bodyData = {lastWeekCrops.body}
-                   renderBody = {(item,index) => renderWeekCropsBody(item, index)}  
-                     
-                   />
+                <Chart
+                 options={chartOptions.options}
+                 series={chartOptions.series}
+                 type='line'
+                 height='100%'
+                />
+              </div>
+            </div>
+            <div className="col-6">
+            <div className="card">
+              <div className="card__header">
+              Analysis for every three months
+                  </div>
+             <Tables2/>
+             
+           </div>
+         </div>
+            <div className="col-6">
+              <div className="card full-height">
+
+                <Chart
+                 options={chartOptions.options}
+                 series={chartOptions.series}
+                 type='line'
+                 height='100%'
+                />
+              </div>
+            </div>
+            {/* <div className="col-6">
+              <div className="card">
+              <div className="card__header">
+                  Weekly Analysis
+                  </div>
+                <div className="card__body">
+                
+                
+                <Tables2/>
+                  
+                </div>
+               
+              </div>
+              
+            </div>
+            <div className="col-6">
+              <div className="card">
+              <div className="card__header">
+                  Monthly Analysis
+                  </div>
+                <div className="card__body">
+                <Tables2/>
+                  
+                </div>
+               
+              </div>
+              
+            </div>
+             <div className="col-6">
+               <div className="card">
+               <div className="card__header">
+                 Analysis for every three months
+                  </div>
+                
+                 <div className="card__body">
+                 <Tables2/>
+                 
+                   
                  </div>
-                 <div className="card__footer">
-                   <Link to='/'>View All</Link>
-                 </div>
+
                </div>
-             </div>
+             </div> */}
        </div>
     </div>
   )

@@ -51,7 +51,7 @@
     padding: 20px;
 
 }
-.notification-item: hover{
+.notification-item:hover{
  background-color: var(--second-bg);
 }
 .notification-item > i{
